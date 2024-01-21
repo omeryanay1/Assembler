@@ -2,6 +2,7 @@ import java.util.HashMap;
 
 public class SymbolTable extends HashMap<String, Integer>{
 
+    // put all the default variables in the table
     public SymbolTable(){
         String key;
         for(int i=0; i<16; i++){
@@ -16,11 +17,13 @@ public class SymbolTable extends HashMap<String, Integer>{
         this.put("THIS", 3);
         this.put("THAT", 4);
     }
-    
+
+    //add a new variable to the table
     public void addEntry(String symbol, int adress){
         this.put(symbol, (Integer)adress);
     }
 
+   // check if the symbole contain in the table 
     public boolean contain(String symbol){
         if(this.containsKey(symbol)) return true;
         return false;
